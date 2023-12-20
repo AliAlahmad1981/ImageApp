@@ -1,4 +1,7 @@
-
+using ImageApp.Common.Repository;
+using ImageApp.Common.Repository.Interfaces;
+using ImageApp.Common.Services;
+using ImageApp.Common.Services.Interfaces;
 using ImageApp.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +18,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     option.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
-
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
