@@ -1,6 +1,6 @@
-Change Connection String For Your Local database in appsetting.json
-open Package Manager Console
-write this command "update-database"
+1- Change Connection String For Your Local database in appsetting.json
+2- open Package Manager Console
+3- write this command "update-database"
 run project by ctrl+f5
 you can add image with descrption 
 you can search on image by name or id 
