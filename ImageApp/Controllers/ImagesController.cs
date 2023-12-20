@@ -74,6 +74,8 @@ public class ImagesController : ControllerBase
     public async Task<IActionResult> Download(int id)
     {
         var image = await _imageService.GetImageById(id);
+        if (image is null) return NotFound("Image Not Found ");
+
         var filePath = Path.Combine(_environment.WebRootPath, "Images", image.FileName);
         var stream = new FileStream(filePath, FileMode.Open);
         return File(stream, image.ContentType);
