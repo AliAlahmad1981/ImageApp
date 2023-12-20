@@ -1,5 +1,4 @@
 ﻿using ImageApp.Common.Services.Interfaces;
-using ImageApp.Common.ViewModel;
 using ImageApp.Entites;
 using Microsoft.AspNetCore.Mvc;
 
